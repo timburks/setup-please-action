@@ -644,7 +644,7 @@ exports.IsPost = !!process.env['STATE_isPost'];
 // Publish a variable so that when the POST action runs, it can determine it should run the cleanup logic.
 // This is necessary since we don't have a separate entry point.
 if (!exports.IsPost) {
-    coreCommand.issueCommand('save-state', { name: 'isPost' }, 'true');
+    coreCommand.issueCommand('saveState', { name: 'isPost' }, 'true');
 }
 
 
@@ -2773,7 +2773,7 @@ exports.group = group;
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function saveState(name, value) {
-    command_1.issueCommand('save-state', { name }, value);
+    command_1.issueCommand('saveState', { name }, value);
 }
 exports.saveState = saveState;
 /**
